@@ -60,7 +60,7 @@ in_equities = ["RELIANCE:NS", "INFY:NS"]
 
 # Get data from TE
 def get_data(symbols):
-    data = te.getMarkets(symbols=symbols)
+    data = te.markets(symbols=symbols)
     df = pd.DataFrame(data)
     return format_market_data(df)
 
