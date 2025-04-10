@@ -7,7 +7,7 @@ import tradingeconomics as te
 
 # Load TradingEconomics API key
 api_key = st.secrets["TE_API_KEY"]
-login(api_key)
+te.login(api_key)
 
 st.set_page_config(layout="wide", page_title="Global Capital Markets Dashboard", initial_sidebar_state="expanded")
 
