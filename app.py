@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import yfinance as yf
 import plotly.graph_objects as go
-from tradingeconomics import login, getMarkets
+import tradingeconomics as te
 
 # Load TradingEconomics API key
 api_key = st.secrets["TE_API_KEY"]
@@ -60,7 +60,7 @@ in_equities = ["RELIANCE:NS", "INFY:NS"]
 
 # Get data from TE
 def get_data(symbols):
-    data = getMarkets(symbols=symbols)
+    data = te.getMarkets(symbols=symbols)
     df = pd.DataFrame(data)
     return format_market_data(df)
 
